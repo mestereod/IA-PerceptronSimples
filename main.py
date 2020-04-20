@@ -36,7 +36,7 @@ class PS:
     def getW(self):
         return self.w
 
-training_set = [((1,1,1,1), 1), ((-1,1,-1,-1), 1), ((1,1,1,-1), -1), ((1,-1,-1,1), 1)]
+training_set = [((1,1,1,1), 1), ((-1,1,-1,-1), 1), ((1,1,1,-1), -1), ((1,-1,-1,1), -1)]
 ps = PS(training_set)
 ps.train()
 
