@@ -1,11 +1,10 @@
 import numpy as np
 
 class PS:
-    def __init__(self, training_set, n_epoch):
+    def __init__(self, training_set):
         self.training_set = training_set
         self.b = 0
         self.eta = 1.0
-        self.epoch = n_epoch
         self.errors = []
         self.w = np.zeros(len(training_set[0][0]))
 
@@ -18,8 +17,8 @@ class PS:
         return self.step_function(summ)
 
 
-    def train(self):
-        for _ in range(self.epoch):
+    def train(self, n_epoch):
+        for _ in range(n_epoch):
             for x, y in self.training_set:
                 summ = sum(x * self.w) + self.b
                 predict = self.step_function(summ)
