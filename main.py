@@ -1,12 +1,11 @@
 import numpy as np
-import matplotlib.pyplot as plt 
 
 class PS:
-    def __init__(self, training_set):
+    def __init__(self, training_set, n_epoch):
         self.training_set = training_set
         self.b = 0
         self.eta = 1.0
-        self.epoch = 10
+        self.epoch = n_epoch
         self.errors = []
         self.w = np.zeros(len(training_set[0][0]))
 
@@ -35,12 +34,3 @@ class PS:
     
     def getW(self):
         return self.w
-
-training_set = [((1,1,1,1), 1), ((-1,1,-1,-1), 1), ((1,1,1,-1), -1), ((1,-1,-1,1), -1)]
-ps = PS(training_set)
-ps.train()
-
-for x, y in training_set:
-    print("Input: {} Predict: {} Expected: {}".format(x, ps.predict(x), y))
-print("Weights:")
-print(ps.getW())
