@@ -5,11 +5,11 @@
 training_set = [((1,1,1,1), 1), ((-1,1,-1,-1), 1), ((1,1,1,-1), -1), ((1,-1,-1,1), -1)]
 
 #New Perceptron
-n_epoch = 10
-ps = PS(training_set, n_epoch)
+ps = PS(training_set)
 
 #Train Perceptron with training set
-ps.train()
+n_epoch = 10
+ps.train(n_epoch)
 
 #Print predict
 for x, y in training_set:
